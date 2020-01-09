@@ -33,3 +33,6 @@
 *.sln
 *.vcxproj
 *.user
+Bin/
+Build/.vs/
+Build/Obj/
