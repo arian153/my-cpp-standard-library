@@ -23,7 +23,7 @@ project "MySTL"
         architecture "x64"
         defines {"_CRT_SECURE_NO_WARNINGS"}
         buildoptions {"-std:c++17"}
-        disablewarnings {"4505", "4456", "4201", "4100", "4189", "4458", "4819", "4127", "4701", "4291", "6385"}
+        disablewarnings {"4505", "4456", "4201", "4100", "4189", "4458", "4819", "4127", "4701", "4291", "6385", "6387"}
 
     filter "configurations:Debug"
         defines {"DEBUG"}
