@@ -3,14 +3,13 @@
 
 namespace MySTL
 {
-    template <typename T>
-    class Vector
+    template<typename T>
+    class BinaryTree
     {
     public:
-        Vector();
-        ~Vector();
+        BinaryTree();
+        ~BinaryTree();
 
     private:
-
     };
 }
