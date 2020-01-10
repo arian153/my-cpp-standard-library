@@ -1,16 +1,13 @@
 #pragma once
-#include "CoreDef.h"
+#include "../CoreDef.h"
 
 namespace MySTL
 {
-    using MemoryPtr = void*;
-    using MemoryUnit = U8*;
-
-    class MemoryArena
+    class Arena
     {
     public:
-        MemoryArena();
-        ~MemoryArena();
+        Arena();
+        ~Arena();
 
         void Alloc(U64 size_of_memory);
         void Free() const;

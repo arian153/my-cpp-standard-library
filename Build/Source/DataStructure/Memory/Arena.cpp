@@ -1,17 +1,17 @@
-#include "MemoryArena.h"
+#include "Arena.h"
 #include <cassert>
 
 namespace MySTL
 {
-    MemoryArena::MemoryArena()
+    Arena::Arena()
     {
     }
 
-    MemoryArena::~MemoryArena()
+    Arena::~Arena()
     {
     }
 
-    void MemoryArena::Alloc(U64 size_of_memory)
+    void Arena::Alloc(U64 size_of_memory)
     {
         assert(m_allocated_memory == nullptr);
         m_allocated_memory = malloc(size_of_memory);
@@ -20,12 +20,12 @@ namespace MySTL
         m_used_size    = 0;
     }
 
-    void MemoryArena::Free() const
+    void Arena::Free() const
     {
         free(m_allocated_memory);
     }
 
-    void MemoryArena::Resize(U64 size_of_memory)
+    void Arena::Resize(U64 size_of_memory)
     {
         if (m_allocated_memory != nullptr)
         {
@@ -47,17 +47,17 @@ namespace MySTL
         }
     }
 
-    void MemoryArena::Reset() const
+    void Arena::Reset() const
     {
         memset(m_allocated_memory, 0, m_maximum_size);
     }
 
-    MemoryPtr MemoryArena::Front() const
+    MemoryPtr Arena::Front() const
     {
         return m_allocated_memory;
     }
 
-    MemoryPtr MemoryArena::Push(size_t size)
+    MemoryPtr Arena::Push(size_t size)
     {
         assert(m_used_size + size <= m_maximum_size);
         MemoryPtr memory = (MemoryUnit)m_allocated_memory + m_used_size;

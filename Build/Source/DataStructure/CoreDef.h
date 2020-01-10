@@ -14,6 +14,9 @@ namespace MySTL
     using R32 = float;
     using R64 = double;
 
+    using MemoryPtr = void*;
+    using MemoryUnit = U8 *;
+
     namespace Core
     {
         constexpr R32 R32_MIN = 1.175494351e-38F;
